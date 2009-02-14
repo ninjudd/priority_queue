@@ -1,0 +1,25 @@
+= PriorityQueue
+
+A very simple priority queue.
+
+== Usage:
+
+ pq = PriorityQueue.new
+ pq[5]  << 'foo'
+ pq[10] << 'unimportant foo'
+ pq[1]  << 'important foo'
+
+ pq.shift # => 'important foo'
+ pq.shift # => 'foo'
+ pq.shift # => 'unimportant foo'
+ pq.shift # => nil
+
+PriorityQueue is also enumerable.
+
+== Install:
+
+  sudo gem install ninjudd-priority-queue -s http://gems.github.com
+
+== License:
+
+Copyright (c) 2009 Justin Balthrop, Geni.com; Published under The MIT License, see License.txt

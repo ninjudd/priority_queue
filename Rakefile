@@ -6,10 +6,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "priority_queue"
-    s.summary = %Q{TODO}
-    s.email = "justin@geni.com"
+    s.summary = %Q{ A simple priority queue in Ruby. }
+    s.email = "code@justinbalthrop.com"
     s.homepage = "http://github.com/ninjudd/priority_queue"
-    s.description = "TODO"
+    s.description = "A simple priority queue in Ruby."
     s.authors = ["Justin Balthrop"]
   end
 rescue LoadError
