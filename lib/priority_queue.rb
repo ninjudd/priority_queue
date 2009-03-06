@@ -2,6 +2,10 @@ class PriorityQueue
   include Enumerable
 
   def initialize
+    clear
+  end
+
+  def clear
     @queues = {}
   end
 
