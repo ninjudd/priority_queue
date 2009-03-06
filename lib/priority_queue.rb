@@ -2,19 +2,21 @@ class PriorityQueue
   include Enumerable
 
   def initialize
-    @queues = Hash.new do |hash, key|
-      hash[key] = []
-    end
+    @queues = {}
   end
 
   def [](value)
-    @queues[value]
+    @queues[value] ||= []
+  end
+
+  def priorities
+    @queues.keys.sort
   end
 
   def shift
-    @queues.keys.sort.each do |key|
-      if @queues[key].any?
-        return @queues[key].shift
+    priorities.each do |key|
+      if self[key].any?
+        return self[key].shift
       else
         @queues.delete(key)
       end
@@ -23,13 +25,13 @@ class PriorityQueue
   end
 
   def each
-    @queues.keys.sort.each do |key|
-      @queues[key].each do |item|
+    priorities.each do |key|
+      self[key].each do |item|
         yield item
       end
     end
   end
-
+  
   def size
     @queues.values.inject(0) do |size, queue|
       size + queue.size
