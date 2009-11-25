@@ -18,7 +18,7 @@ PriorityQueue is also enumerable.
 
 == Install:
 
-  sudo gem install ninjudd-priority-queue -s http://gems.github.com
+  sudo gem install priority-queue -s http://gemcutter.org
 
 == License:
 
