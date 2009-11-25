@@ -1,6 +1,6 @@
-class PriorityQueue
-  include Enumerable
+require 'thread'
 
+class PriorityQueue
   def initialize
     clear
   end
@@ -10,7 +10,7 @@ class PriorityQueue
   end
 
   def [](value)
-    @queues[value] ||= []
+    @queues[value] ||= Queue.new
   end
 
   def priorities
@@ -19,21 +19,13 @@ class PriorityQueue
 
   def shift
     priorities.each do |key|
-      if self[key].any?
-        return self[key].shift
+      if not self[key].empty?
+        return self[key].shift(true)
       else
         @queues.delete(key)
       end
     end
     nil
-  end
-
-  def each
-    priorities.each do |key|
-      self[key].each do |item|
-        yield item
-      end
-    end
   end
   
   def size

@@ -1,17 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper'
 
 class PriorityQueueTest < Test::Unit::TestCase
-  should "be enumerable in priority order" do
-    pq = PriorityQueue.new
-    
-    pq[4] << :foo
-    pq[4] << :bar
-    pq[1] << :important_foo
-    pq[1] << :important_bar
-
-    assert_equal [:important_foo, :important_bar, :foo, :bar], pq.to_a
-  end
-
   should "shift values in priority order" do
     pq = PriorityQueue.new
     
