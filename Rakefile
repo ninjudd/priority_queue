@@ -12,6 +12,7 @@ begin
     s.description = "A simple priority queue in Ruby."
     s.authors = ["Justin Balthrop"]
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
 end
