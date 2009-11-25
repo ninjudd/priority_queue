@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/priority_queue.rb",
+     "priority_queue.gemspec",
      "test/priority_queue_test.rb",
      "test/test_helper.rb"
   ]
