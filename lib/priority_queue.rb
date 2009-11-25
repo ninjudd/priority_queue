@@ -33,4 +33,8 @@ class PriorityQueue
       size + queue.size
     end
   end
+
+  def empty?
+    @queues.all? {|priority, queue| queue.empty?}
+  end
 end

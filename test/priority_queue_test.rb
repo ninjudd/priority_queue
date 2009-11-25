@@ -40,4 +40,26 @@ class PriorityQueueTest < Test::Unit::TestCase
     3.times { pq.shift }
     assert_equal 0, pq.size
   end
+
+  should "know if it is empty" do
+    pq = PriorityQueue.new
+
+    assert pq.empty?
+
+    pq[7] << :foo
+    pq[7] << :fu
+    pq[1] << :bap
+    pq[0] << :zap
+
+    assert !pq.empty?
+    
+    3.times { pq.shift }
+    assert !pq.empty?
+
+    pq.shift
+    assert pq.empty?
+
+    pq.shift
+    assert pq.empty?    
+  end
 end
